@@ -19,15 +19,16 @@
         <section id="wrapper">
             <header id="header">
                 <div class="top">
-                    {% block navigation %}
-                        <nav>
-                            <ul class="navigation">
+			<!-- app/Resources/views/base.html.twig -->
+			{% block navigation %}
+			    <nav>
+				<ul class="navigation">
 				    <li><a href="{{ path('BloggerBlogBundle_homepage') }}">Home</a></li>
 				    <li><a href="{{ path('BloggerBlogBundle_about') }}">About</a></li>
-				    <li><a href="#">Contact</a></li>
-                            </ul>
-                        </nav>
-                    {% endblock %}
+				    <li><a href="{{ path('BloggerBlogBundle_contact') }}">Contact</a></li>
+				</ul>
+			    </nav>
+			{% endblock %}
                 </div>
 
                 <hgroup>

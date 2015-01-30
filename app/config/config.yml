@@ -2,6 +2,7 @@ imports:
     - { resource: parameters.yml }
     - { resource: security.yml }
     - { resource: services.yml }
+    - { resource: @BloggerBlogBundle/Resources/config/config.yml }
 
 framework:
     #esi:             ~
@@ -71,3 +72,8 @@ swiftmailer:
     username:  "%mailer_user%"
     password:  "%mailer_password%"
     spool:     { type: memory }
+
+# app/config/config.yml
+parameters:
+    # dirección de correo electrónico para contacto con el Blogger
+    blogger_blog.emails.contact_email: assistant@email.com

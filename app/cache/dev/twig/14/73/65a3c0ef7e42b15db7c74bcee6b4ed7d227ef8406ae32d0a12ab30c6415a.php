@@ -18,6 +18,7 @@ class __TwigTemplate_147365a3c0ef7e42b15db7c74bcee6b4ed7d227ef8406ae32d0a12ab30c
         }
 
         $this->blocks = array(
+            'stylesheets' => array($this, 'block_stylesheets'),
             'sidebar' => array($this, 'block_sidebar'),
         );
     }
@@ -33,9 +34,23 @@ class __TwigTemplate_147365a3c0ef7e42b15db7c74bcee6b4ed7d227ef8406ae32d0a12ab30c
     }
 
     // line 4
-    public function block_sidebar($context, array $blocks = array())
+    public function block_stylesheets($context, array $blocks = array())
     {
         // line 5
+        echo "    ";
+        $this->displayParentBlock("stylesheets", $context, $blocks);
+        echo "
+    <link href=\"";
+        // line 6
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/bloggerblog/css/blog.css"), "html", null, true);
+        echo "\" type=\"text/css\" rel=\"stylesheet\" />
+";
+    }
+
+    // line 9
+    public function block_sidebar($context, array $blocks = array())
+    {
+        // line 10
         echo "    Sidebar content
 ";
     }
@@ -52,6 +67,6 @@ class __TwigTemplate_147365a3c0ef7e42b15db7c74bcee6b4ed7d227ef8406ae32d0a12ab30c
 
     public function getDebugInfo()
     {
-        return array (  39 => 5,  36 => 4,  11 => 2,);
+        return array (  54 => 10,  51 => 9,  45 => 6,  40 => 5,  37 => 4,  11 => 2,);
     }
 }
