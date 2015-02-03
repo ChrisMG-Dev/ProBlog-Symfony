@@ -7,8 +7,8 @@ parameters:
     database_user: root
     database_password: root
     mailer_transport: smtp
-    mailer_host: "smtp.gmail.com"
-    mailer_user: "chrismgdaw@gmail.com"
-    mailer_password: "Ap16@FTW"
+    mailer_host: smtp.gmail.com
+    mailer_user: ''
+    mailer_password: ''
     locale: es
     secret: ThisTokenIsNotSoSecretChangeIt

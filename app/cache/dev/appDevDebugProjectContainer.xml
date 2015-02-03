@@ -15,6 +15,7 @@
       <parameter key="SwiftmailerBundle">Symfony\Bundle\SwiftmailerBundle\SwiftmailerBundle</parameter>
       <parameter key="AsseticBundle">Symfony\Bundle\AsseticBundle\AsseticBundle</parameter>
       <parameter key="DoctrineBundle">Doctrine\Bundle\DoctrineBundle\DoctrineBundle</parameter>
+      <parameter key="DoctrineFixturesBundle">Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle</parameter>
       <parameter key="SensioFrameworkExtraBundle">Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle</parameter>
       <parameter key="AppBundle">AppBundle\AppBundle</parameter>
       <parameter key="BloggerBlogBundle">Blogger\BlogBundle\BloggerBlogBundle</parameter>
@@ -34,8 +35,8 @@
     <parameter key="database_password">root</parameter>
     <parameter key="mailer_transport">smtp</parameter>
     <parameter key="mailer_host">smtp.gmail.com</parameter>
-    <parameter key="mailer_user">chrismgdaw@gmail.com</parameter>
-    <parameter key="mailer_password">Ap16@FTW</parameter>
+    <parameter key="mailer_user"></parameter>
+    <parameter key="mailer_password"></parameter>
     <parameter key="locale">es</parameter>
     <parameter key="secret">ThisTokenIsNotSoSecretChangeIt</parameter>
     <parameter key="blogger_blog.emails.contact_email">assistant@email.com</parameter>
@@ -419,8 +420,8 @@
     <parameter key="swiftmailer.mailer.default.transport.smtp.encryption">null</parameter>
     <parameter key="swiftmailer.mailer.default.transport.smtp.port">25</parameter>
     <parameter key="swiftmailer.mailer.default.transport.smtp.host">smtp.gmail.com</parameter>
-    <parameter key="swiftmailer.mailer.default.transport.smtp.username">chrismgdaw@gmail.com</parameter>
-    <parameter key="swiftmailer.mailer.default.transport.smtp.password">Ap16@FTW</parameter>
+    <parameter key="swiftmailer.mailer.default.transport.smtp.username"></parameter>
+    <parameter key="swiftmailer.mailer.default.transport.smtp.password"></parameter>
     <parameter key="swiftmailer.mailer.default.transport.smtp.auth_mode">null</parameter>
     <parameter key="swiftmailer.mailer.default.transport.smtp.timeout">30</parameter>
     <parameter key="swiftmailer.mailer.default.transport.smtp.source_ip">null</parameter>
@@ -2449,7 +2450,9 @@
         <argument key="user">root</argument>
         <argument key="password">root</argument>
         <argument key="charset">UTF8</argument>
-        <argument key="driverOptions" type="collection"/>
+        <argument key="driverOptions" type="collection">
+          <argument key="1002">SET NAMES 'UTF8' COLLATE 'utf8_spanish_ci'</argument>
+        </argument>
       </argument>
       <argument type="service">
         <service class="Doctrine\DBAL\Configuration" public="false">

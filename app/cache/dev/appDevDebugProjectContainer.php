@@ -638,7 +638,7 @@ class appDevDebugProjectContainer extends Container
         $b = new \Doctrine\DBAL\Configuration();
         $b->setSQLLogger($a);
 
-        return $this->services['doctrine.dbal.default_connection'] = $this->get('doctrine.dbal.connection_factory')->createConnection(array('driver' => 'pdo_mysql', 'host' => '127.0.0.1', 'port' => NULL, 'dbname' => 'ProBlog', 'user' => 'root', 'password' => 'root', 'charset' => 'UTF8', 'driverOptions' => array()), $b, new \Symfony\Bridge\Doctrine\ContainerAwareEventManager($this), array());
+        return $this->services['doctrine.dbal.default_connection'] = $this->get('doctrine.dbal.connection_factory')->createConnection(array('driver' => 'pdo_mysql', 'host' => '127.0.0.1', 'port' => NULL, 'dbname' => 'ProBlog', 'user' => 'root', 'password' => 'root', 'charset' => 'UTF8', 'driverOptions' => array(1002 => 'SET NAMES \'UTF8\' COLLATE \'utf8_spanish_ci\'')), $b, new \Symfony\Bridge\Doctrine\ContainerAwareEventManager($this), array());
     }
 
     /**
@@ -3724,6 +3724,7 @@ class appDevDebugProjectContainer extends Container
                 'SwiftmailerBundle' => 'Symfony\\Bundle\\SwiftmailerBundle\\SwiftmailerBundle',
                 'AsseticBundle' => 'Symfony\\Bundle\\AsseticBundle\\AsseticBundle',
                 'DoctrineBundle' => 'Doctrine\\Bundle\\DoctrineBundle\\DoctrineBundle',
+                'DoctrineFixturesBundle' => 'Doctrine\\Bundle\\FixturesBundle\\DoctrineFixturesBundle',
                 'SensioFrameworkExtraBundle' => 'Sensio\\Bundle\\FrameworkExtraBundle\\SensioFrameworkExtraBundle',
                 'AppBundle' => 'AppBundle\\AppBundle',
                 'BloggerBlogBundle' => 'Blogger\\BlogBundle\\BloggerBlogBundle',
@@ -3743,8 +3744,8 @@ class appDevDebugProjectContainer extends Container
             'database_password' => 'root',
             'mailer_transport' => 'smtp',
             'mailer_host' => 'smtp.gmail.com',
-            'mailer_user' => 'chrismgdaw@gmail.com',
-            'mailer_password' => 'Ap16@FTW',
+            'mailer_user' => '',
+            'mailer_password' => '',
             'locale' => 'es',
             'secret' => 'ThisTokenIsNotSoSecretChangeIt',
             'blogger_blog.emails.contact_email' => 'assistant@email.com',
@@ -4136,8 +4137,8 @@ class appDevDebugProjectContainer extends Container
             'swiftmailer.mailer.default.transport.smtp.encryption' => NULL,
             'swiftmailer.mailer.default.transport.smtp.port' => 25,
             'swiftmailer.mailer.default.transport.smtp.host' => 'smtp.gmail.com',
-            'swiftmailer.mailer.default.transport.smtp.username' => 'chrismgdaw@gmail.com',
-            'swiftmailer.mailer.default.transport.smtp.password' => 'Ap16@FTW',
+            'swiftmailer.mailer.default.transport.smtp.username' => '',
+            'swiftmailer.mailer.default.transport.smtp.password' => '',
             'swiftmailer.mailer.default.transport.smtp.auth_mode' => NULL,
             'swiftmailer.mailer.default.transport.smtp.timeout' => 30,
             'swiftmailer.mailer.default.transport.smtp.source_ip' => NULL,
