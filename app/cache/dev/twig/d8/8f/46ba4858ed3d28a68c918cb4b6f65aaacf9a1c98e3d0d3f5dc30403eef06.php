@@ -36,8 +36,68 @@ class __TwigTemplate_d88f46ba4858ed3d28a68c918cb4b6f65aaacf9a1c98e3d0d3f5dc30403
     public function block_body($context, array $blocks = array())
     {
         // line 5
-        echo "    Blog homepage
-";
+        echo "    ";
+        $context['_parent'] = (array) $context;
+        $context['_seq'] = twig_ensure_traversable($this->getContext($context, "blogs"));
+        $context['_iterated'] = false;
+        foreach ($context['_seq'] as $context["_key"] => $context["blog"]) {
+            // line 6
+            echo "        <article class=\"blog\">
+            <div class=\"date\"><time datetime=\"";
+            // line 7
+            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute($context["blog"], "created", array()), "c"), "html", null, true);
+            echo "\">";
+            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute($context["blog"], "created", array()), "l, F j, Y"), "html", null, true);
+            echo "</time></div>
+            <header>
+                <h2><a href=\"";
+            // line 9
+            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("BloggerBlogBundle_blog_show", array("id" => $this->getAttribute($context["blog"], "id", array()))), "html", null, true);
+            echo "\">";
+            echo twig_escape_filter($this->env, $this->getAttribute($context["blog"], "title", array()), "html", null, true);
+            echo "</a></h2>
+            </header>
+
+            <img src=\"";
+            // line 12
+            echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl(twig_join_filter(array(0 => "images/", 1 => $this->getAttribute($context["blog"], "image", array())))), "html", null, true);
+            echo "\" />
+            <div class=\"snippet\">
+                <p>";
+            // line 14
+            echo twig_escape_filter($this->env, $this->getAttribute($context["blog"], "blog", array(0 => 500), "method"), "html", null, true);
+            echo "</p>
+                <p class=\"continue\"><a href=\"";
+            // line 15
+            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("BloggerBlogBundle_blog_show", array("id" => $this->getAttribute($context["blog"], "id", array()))), "html", null, true);
+            echo "\">Continue reading...</a></p>
+            </div>
+
+            <footer class=\"meta\">
+                <p>Comments: -</p>
+                <p>Posted by <span class=\"highlight\">";
+            // line 20
+            echo twig_escape_filter($this->env, $this->getAttribute($context["blog"], "author", array()), "html", null, true);
+            echo "</span> at ";
+            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute($context["blog"], "created", array()), "h:iA"), "html", null, true);
+            echo "</p>
+                <p>Tags: <span class=\"highlight\">";
+            // line 21
+            echo twig_escape_filter($this->env, $this->getAttribute($context["blog"], "tags", array()), "html", null, true);
+            echo "</span></p>
+            </footer>
+        </article>
+    ";
+            $context['_iterated'] = true;
+        }
+        if (!$context['_iterated']) {
+            // line 25
+            echo "        <p>There are no blog entries for symblog</p>
+    ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['blog'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
     }
 
     public function getTemplateName()
@@ -52,6 +112,6 @@ class __TwigTemplate_d88f46ba4858ed3d28a68c918cb4b6f65aaacf9a1c98e3d0d3f5dc30403
 
     public function getDebugInfo()
     {
-        return array (  39 => 5,  36 => 4,  11 => 2,);
+        return array (  95 => 25,  86 => 21,  80 => 20,  72 => 15,  68 => 14,  63 => 12,  55 => 9,  48 => 7,  45 => 6,  39 => 5,  36 => 4,  11 => 2,);
     }
 }
