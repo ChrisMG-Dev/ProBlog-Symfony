@@ -375,4 +375,15 @@ class Blog extends \Blogger\BlogBundle\Entity\Blog implements \Doctrine\ORM\Prox
         return parent::getComments();
     }
 
+    /**
+     * {@inheritDoc}
+     */
+    public function __toString()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, '__toString', array());
+
+        return parent::__toString();
+    }
+
 }
